@@ -5,9 +5,10 @@
     #sidenav
     [fixedInViewport]="true"
     class="sidenav"
-    opened
+    [opened]="!isSmallScreen"
     position="start"
-    mode="push"
+    [mode]="sidenavMode"
+
 
     >
 

@@ -9,20 +9,26 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AppComponent {
   title = 'curso';
-
-  @ViewChild(MatSidenav) sidenav!:MatSidenav; //!ele pode ser null
+  public isSmallScreen:boolean=false;
+ 
 
   constructor(private bpo:BreakpointObserver){}
+
+ get sidenavMode(){
+  return this.isSmallScreen ? "over": "push";
+ }
 
   ngAfterContentInit(): void {
     this.bpo.observe(['(max-width:800px']).subscribe({
       next:(res)=>{
         if(res.matches){
-           this.sidenav.close();
-           this.sidenav.mode="over";
+
+           this.isSmallScreen=true;
+
           }else{
-            this.sidenav.open();
-            this.sidenav.mode="side";
+
+            this.isSmallScreen=false;
+
 
         }
       }
