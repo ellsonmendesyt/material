@@ -2,7 +2,24 @@
   flex: 1 1 auto;
 }
 
+.sidenav{
+  border:1px dashed dodgerblue;
+  // background-color: #7e7e7e;
+  width:300px;
 
+
+}
+.mat-sidenav-container{
+  border:3px solid crimson;
+  height: 100vh;
+
+}
+
+.mat-sidenav-content{
+  border:4px solid orange;
+  height: 98vh;
+
+}
 
 //
 
