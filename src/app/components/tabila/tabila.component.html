@@ -1,3 +1,14 @@
+<ng-container>
+
+  <div class="example-container">
+    <mat-form-field appearance="outline">
+      <mat-label>filtro</mat-label>
+      <input matInput  formControl="text"  (keyup)="aplicarFiltro($any($event.target).value)" >
+    </mat-form-field>
+  </div>
+</ng-container>
+
+
 <table mat-table [dataSource]="books" >
 
   <ng-container matColumnDef="id">

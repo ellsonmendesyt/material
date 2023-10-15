@@ -8,12 +8,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSnackBarModule} from "@angular/material/snack-bar"
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from "@angular/material/dialog"
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   imports: [
 
   ],
   exports:[
     MatSlideToggleModule,
+    MatInputModule,
     MatSliderModule,
     MatIconModule,
     MatToolbarModule,
@@ -22,6 +26,8 @@ import {MatDialogModule} from "@angular/material/dialog"
     MatSnackBarModule,
     MatTableModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatSortModule,
 
   ],
   declarations: []

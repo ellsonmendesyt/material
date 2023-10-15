@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export interface Book{
   id:string;
@@ -20,13 +21,16 @@ let books:Book[]=[{
   styleUrls: ['./tabila.component.scss']
 })
 export class TabilaComponent {
-
-  public books:Book[]=[];
+  public texto!:string;
+  books= new MatTableDataSource(books);
   public colunas=['id','title','author','category']
 
- constructor() {
- this.books=books;
-}
+ constructor() {}
+
+ aplicarFiltro(value:string){
+  console.log(value);
+  this.books.filter=value.trim().toLowerCase();
+ }
 
 debug(info:any){
   console.log(info)
