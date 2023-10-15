@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface Book{
   id:string;
@@ -20,16 +21,26 @@ let books:Book[]=[{
   templateUrl: './tabila.component.html',
   styleUrls: ['./tabila.component.scss']
 })
-export class TabilaComponent {
+export class TabilaComponent  {
+
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   public texto!:string;
-  books= new MatTableDataSource(books);
+  dataSource= new MatTableDataSource(books);
   public colunas=['id','title','author','category']
 
  constructor() {}
 
+ ngAfterViewInit() {
+  this.dataSource.sort = this.sort;
+  this.dataSource.paginator=this.paginator;
+  this.paginator._intl.itemsPerPageLabel="itens por pagina";
+}
+
  aplicarFiltro(value:string){
   console.log(value);
-  this.books.filter=value.trim().toLowerCase();
+  this.dataSource.filter=value.trim().toLowerCase();
  }
 
 debug(info:any){
