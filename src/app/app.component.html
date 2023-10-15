@@ -1,11 +1,11 @@
 
 
-  <mat-sidenav-container>
+  <mat-sidenav-container >
     <mat-sidenav
     #sidenav
     [fixedInViewport]="true"
     class="sidenav"
-    [opened]="!isSmallScreen"
+    opened="false"
     position="start"
     [mode]="sidenavMode"
 
@@ -13,17 +13,19 @@
     >
 
     </mat-sidenav>
-    
-    <mat-sidenav-content>
+
+    <mat-sidenav-content >
       <!-- BARRA DE FERRAMENTAS -->
-      <mat-toolbar>
+      <mat-toolbar color="primary"
+      [class.mat-elevation-z4]="applyShadow"
+     class="toolbar-menu">
+
         <button mat-icon-button
-        class="example-icon"
         (click)="sidenav.toggle()"
         >
           <mat-icon>menu</mat-icon>
         </button>
-        <span>My App</span>
+        <span *ngIf="showText">My App</span>
         <span class="example-spacer"></span>
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
           <mat-icon>favorite</mat-icon>
@@ -32,23 +34,35 @@
           <mat-icon>share</mat-icon>
         </button>
       </mat-toolbar>
+      <mat-toolbar class="toolbar-submenu" color="primary">
+        <span>My App </span>
+      </mat-toolbar>
       <!-- CONTEUDO -->
-      <h2>Conteudo</h2>
+      <app-tabila></app-tabila>
+      <!-- <app-notification></app-notification> -->
+
+    <!-- <app-modal></app-modal> -->
+
+
+      <!-- <my-snackbar></my-snackbar>
+          <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+          <mat-slider
+          color="warn"
+          class="mySlider"
+          min="1" max="100" step="1" value="10">
+            <input matSliderThumb>
+          </mat-slider> -->
+          <!-- <app-tabela></app-tabela> -->
+
+<!-- content end -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 
 
 
 
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
 
-<mat-slider
-color="warn"
-
-class="mySlider"
-min="1" max="100" step="1" value="10">
-  <input matSliderThumb>
-</mat-slider>
 
 
 

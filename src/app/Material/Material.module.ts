@@ -5,9 +5,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
-
-
+import {MatSnackBarModule} from "@angular/material/snack-bar"
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from "@angular/material/dialog"
 @NgModule({
   imports: [
 
@@ -19,6 +19,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatDialogModule,
+
   ],
   declarations: []
 })
